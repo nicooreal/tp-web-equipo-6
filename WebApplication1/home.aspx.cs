@@ -18,6 +18,22 @@ namespace WebApplication1
         
             ArticuloNegocio artNegocio = new ArticuloNegocio();
             listaDeProductos = artNegocio.listar();
+           
+            repetidor.DataSource = listaDeProductos;
+            repetidor.DataBind();
+
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+            string filtro = txtSearch.Text;
+
+
+            List<Articulo> resultados = listaDeProductos.FindAll(prod => prod.Nombre.ToLower().Contains(filtro.ToLower())).ToList();
+
+            repetidor.DataSource = resultados;
+            repetidor.DataBind();
         }
     }
 }
