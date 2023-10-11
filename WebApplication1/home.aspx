@@ -7,7 +7,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand" href="#">productos</a>
+    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,10 +34,10 @@
 
     
     <div class="col">
-    <div class="card h-100">
-    <img src="<%#Eval("Imagen")%>" alt="Alternate Text" class="card-img-top" />
+    <div class="card ">
+    <img src='<%# string.IsNullOrEmpty(Eval("Imagen").ToString()) ? "https://cdn.icon-icons.com/icons2/3487/PNG/512/status_magnify_negative_error_search_icon_220325.png" : Eval("Imagen").ToString() %>' alt="no se pudo cargar" class="card-img-top" />
       
-      <div class="card-body">
+      <div class="card-body ">
       
           <h5 class="card-title"><%#Eval("Nombre")%></h5>
           <p class="card-text"><%#Eval("Marca")%></p>
