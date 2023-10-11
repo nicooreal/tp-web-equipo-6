@@ -35,5 +35,10 @@ namespace WebApplication1
             repetidor.DataSource = resultados;
             repetidor.DataBind();
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            //guardar id en la sesion?? sesion.Add("id", id)
+        }
     }
 }

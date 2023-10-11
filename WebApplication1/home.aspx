@@ -44,8 +44,8 @@
           <p class ="card- text" > <%#Eval("Descripcion")%> </p>
          <p class ="card- text" > <%#Eval("Categoria")%> </p>
          <p class ="card- text" > $ <%#Eval("Precio")%> </p> 
-          <button class="btn btn-primary" > comprar </button> 
           
+          <asp:Button ID="Button1" runat="server" cssClass="btn btn-primary" OnClick="Button1_Click" Text="Button" />
 
       </div>
     </div>
