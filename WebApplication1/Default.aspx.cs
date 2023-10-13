@@ -17,49 +17,37 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            AccesoDatos datos = new AccesoDatos();
-            ArticuloNegocio negocio = new ArticuloNegocio();
-
             try
             {
-                datos.setearQuery("create PROCEDURE SPlistarArticulo\r\nAS\r\nSELECT min(I.IMAGENURL)as UrlImagen, A.ID as Id,A.CODIGO as Codigo,A.NOMBRE as Nombre,A.Descripcion as Descripcion, C.Descripcion as Categoria, M.Descripcion as Marca,A.Precio as Precio\r\nfrom ARTICULOS as a\r\nleft join\r\nIMAGENES as i\r\non i.IdArticulo=a.id\r\nleft join MARCAS as m\r\non m.id=a.IdMarca\r\nleft join CATEGORIAS as c\r\non c.id=a.IdCategoria\r\ngroup by i.IdArticulo,a.Nombre,a.codigo,a.Descripcion,a.precio,a.id,c.Descripcion,m.Descripcion ");
-                datos.ejecutarLectura();
-                datos.cerrarConexion();
 
-                Session.Add("listaArticulooos", negocio.listarConSP());
+            ArticuloNegocio artNegocio = new ArticuloNegocio();
+            ListaArticulo = artNegocio.listar();
 
-                ListaArticulo = (List<Articulo>)Session["listaArticulooos"];
+        
 
-
-
-
+                
+            Session.Add("listaArticulooos", ListaArticulo);
+            ListaArticulo = (List<Articulo>)Session["listaArticulooos"];
 
                 if (!IsPostBack)
                 {
-                    repRepetidor.DataSource = ListaArticulo;
-                    repRepetidor.DataBind();
+                    repetidor.DataSource = ListaArticulo;
+                    repetidor.DataBind();
 
                 }
             }
-            catch (Exception ex)
+           
+                
+                catch (Exception ex)
             {
 
                 throw ex;
             }
-            finally
-            {
-                datos.setearQuery("drop PROCEDURE SPlistarArticulo");
-                datos.ejecutarLectura();
-                datos.cerrarConexion();
-            }
-
-
-
-
-
-
+            
+          
+                
+           
         }
-
 
 
 
@@ -71,16 +59,31 @@ namespace WebApplication1
 
             string filtro = txtSearch.Text;
 
+            if (filtro != null)
+            {
 
-            List<Articulo> resultados = listaDeProductos.FindAll(prod => prod.Nombre.ToLower().Contains(filtro.ToLower())).ToList();
+                List<Articulo> resultados = ListaArticulo.FindAll(prod => prod.Nombre.ToLower().Contains(filtro.ToLower())).ToList();
 
-            repetidor.DataSource = resultados;
-            repetidor.DataBind();
+                repetidor.DataSource = resultados;
+                repetidor.DataBind();
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //guardar id en la sesion?? sesion.Add("id", id)
+           
+        }
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Sesion sesion = new Sesion();
+            CarritoNegocio negocio = new CarritoNegocio();
+
+            string valor = ((Button)sender).CommandArgument;
+            sesion.AgregarId(int.Parse(valor));
+             negocio.AgregarAlCarrito(int.Parse(valor));
+
+            sesion.ArticuloASession(int.Parse(valor));
         }
     }
 }

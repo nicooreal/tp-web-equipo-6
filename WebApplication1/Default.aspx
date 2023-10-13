@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/maestro.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebApplication1.login" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/maestro.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebApplication1.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -45,7 +45,9 @@
          <p class ="card- text" > <%#Eval("Categoria")%> </p>
          <p class ="card- text" > $ <%#Eval("Precio")%> </p> 
           
-          <asp:Button ID="Button1" runat="server" cssClass="btn btn-primary" OnClick="Button1_Click" Text="Button" />
+<div style="display:flex; float:right;padding-right:20px">
+<asp:Button style="" autoPOSTBACK="true" ID="btnAgregar" runat="server" Text="Agregar"  CssClass="btn btn-primary" CommandArgument='<%#Eval("Id") %>' CommandName="ArticuloId" OnClick="btnAgregar_Click"/>
+</div>
 
       </div>
     </div>

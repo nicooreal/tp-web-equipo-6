@@ -11,7 +11,7 @@ namespace WebApplication1
 {
 
 
-    public partial class login
+    public partial class Default
     {
 
         /// <summary>
