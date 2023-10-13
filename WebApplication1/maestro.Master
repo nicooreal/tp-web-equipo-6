@@ -10,8 +10,26 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-
+    
+    <style>
+        #aCarrito{
+            align-content: end;
+            align-items: end;
+        }
+        #imgCarrito{
+            float: right;
+            width: 40px;
+            height: 40px;
+            align-content:end;
+            align-items:end;
+        }
+    </style>
 </head>
+
+
+
+
+
 <body>
     <form id="form1" runat="server">
         
@@ -19,7 +37,7 @@
         
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">MERCADOUTN</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -41,10 +59,14 @@
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">POSIBLE IDA A CARRITO</a>
-        </li>
-      </ul>
+<li class="nav-item">
+<img id="imgCarrito" src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="Carrito" /><asp:Label ID="lblContador"  runat="server" Text="" ></asp:Label>
+</li>
+
+<li class="nav-item">
+<a id="aCarrito" class="nav-link" href="Carrito.aspx">CARRITO</a>
+  </li> 
+    </ul>
     </div>
   </div>
 </nav>

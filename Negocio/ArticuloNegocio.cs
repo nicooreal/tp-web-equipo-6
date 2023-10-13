@@ -175,7 +175,75 @@ namespace Negocio
 
 
 
+        public List<Articulo> listarArticuloXid(string id)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
 
+            try
+            {
+                string consulta = "select a.Id as Id, a.Codigo as Codigo,a.Descripcion as Descripcion,c.Descripcion as Categoria,m.Descripcion as Marca,a.Nombre as Nombre,a.Precio as Precio from ARTICULOS as a left join MARCAS as m on m.Id = a.IdMarca left join CATEGORIAS as c on c.Id = a.IdCategoria where a.id =  ";
+                consulta += id;
+
+                datos.setearConsulta(consulta);
+                datos.ejecutarLectura();
+
+
+                if (datos.Lector.Read())
+                {
+                    Articulo aux = new Articulo();
+
+                    if (!(datos.Lector["Codigo"] is DBNull))
+                        aux.CodigoArticulo = (string)datos.Lector["Codigo"];
+                   
+                    else
+                        aux.CodigoArticulo = (string)"sin codigo";
+
+                    if (!(datos.Lector["Descripcion"] is DBNull))
+                        aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    else
+                        aux.Descripcion = "sin descripcion";
+
+                    aux.Categoria = new Categoria();
+                    if (!(datos.Lector["Categoria"] is DBNull))
+                        aux.Categoria.nomCategoria = (string)datos.Lector["Categoria"];
+                    else
+                        aux.Categoria.nomCategoria = "Sin categoria";
+
+
+                    aux.Marca = new Marca();
+
+                    if (!(datos.Lector["Marca"] is DBNull))
+                        aux.Marca.nomMarca = (string)datos.Lector["Marca"];
+                    else
+                        aux.Marca.nomMarca = "Sin marca";
+
+                    if (!(datos.Lector["Nombre"] is DBNull))
+                        aux.Nombre = (string)datos.Lector["Nombre"];
+                    else
+                        aux.Nombre = "sin nombre";
+
+                    if (!(datos.Lector["Precio"] is DBNull))
+                        aux.Precio = (decimal)datos.Lector["Precio"];
+
+                    if (!(datos.Lector["Id"] is DBNull))
+                        aux.Id = (int)datos.Lector["Id"];
+
+
+                    lista.Add(aux);
+
+                }
+
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
 
 
 

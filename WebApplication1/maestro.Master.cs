@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,5 +14,33 @@ namespace WebApplication1
         {
 
         }
+
+
+
+        protected override void OnPreRender(EventArgs e)
+        {
+            base.OnPreRender(e);
+
+            Sesion sesion = new Sesion();
+            int valor = sesion.CantSession();
+
+            if (valor == 0)
+            {
+                lblContador.Text = "vacio";
+            }
+            else
+            {
+                lblContador.Text = valor.ToString();
+            }
+        }
+
+
+
+
+
+
+
+
+
     }
 }
