@@ -39,7 +39,10 @@
 
     </asp:Repeater>
 
-
+        <div style="display:flex">
+        <h3 style="padding:5px">TOTAL: $ </h3>
+        <asp:Label ID="lblTotal" runat="server" Text="q" style="font-size:30px"></asp:Label>
+    </div>
 
 
 </asp:Content>

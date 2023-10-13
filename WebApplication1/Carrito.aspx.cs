@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Negocio;
 
 namespace WebApplication1
 {
@@ -14,7 +15,7 @@ namespace WebApplication1
         public List<Articulo> ListaArticulo { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-/*
+
             Sesion sesion = new Sesion();
 
             RepCarrito.DataSource = sesion.ListadeCarrito();
@@ -28,7 +29,7 @@ namespace WebApplication1
             }
 
             lblTotal.Text = total.ToString();
-*/
+
         }
     }
 }
