@@ -7,7 +7,7 @@
         <ItemTemplate>
           
 <div style="display: flex">
-                <p ><%#Eval("Id") %></p>
+                <%--<p ><%#Eval("Id") %></p>--%>
                 <h2><%#Eval("nombre") %></h2>
                 <p style="padding:5px; font-size:20px"><%#Eval("marca") %></p>
                 
