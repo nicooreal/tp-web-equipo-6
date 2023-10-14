@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/maestro.Master" AutoEventWireup="true" CodeBehind="Carrito.aspx.cs" Inherits="WebApplication1.Carrito" %>
+﻿<%@ Page  EnableEventValidation="false"    Title="" Language="C#" MasterPageFile="~/maestro.Master" AutoEventWireup="true" CodeBehind="Carrito.aspx.cs" Inherits="WebApplication1.Carrito" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -29,7 +29,8 @@
                 <p style="padding-left:5px;padding-right:10px; font-size:20px">$ <%#Eval("precio") %></p>
 
                 <div>
-                    <asp:Button autoPOSTBACK = "true" ID="btnEliminar" runat="server" Text="Eliminar"   CommandArgument='<%#Eval("Id") %>' CommandName="ArticuloId" />
+                    
+                    <asp:Button autoPOSTBACK = "true" ID="btnEliminar" runat="server" Text="Eliminar"  CssClass="btn btn-primary" CommandArgument='<%#Eval("Id") %>' CommandName="ArticuloId" OnClick="btnEliminar_Click"/>
                 </div>
                 
             </div>

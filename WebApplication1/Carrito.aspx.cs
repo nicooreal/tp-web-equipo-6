@@ -30,6 +30,33 @@ namespace WebApplication1
 
             lblTotal.Text = total.ToString();
 
+       
+      
+        
+          }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Sesion sesion = new Sesion();
+            CarritoNegocio negocio = new CarritoNegocio();
+
+            string valor = ((Button)sender).CommandArgument;
+            sesion.EliminarId(int.Parse(valor));
+            //RepCarrito.DataSource = sesion.ListadeCarrito();
+            //RepCarrito.DataBind();
+
+
+            sesion.ArticuloEliminarEnSession(int.Parse(valor));
+
+
         }
-    }
+
+
+
+
+
+
+
+
+    } 
 }
