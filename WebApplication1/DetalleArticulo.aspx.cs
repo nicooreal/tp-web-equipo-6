@@ -34,7 +34,7 @@ namespace WebApplication1
 
 
                 DataBind();
-                LblArticulo.Text = id;
+                //LblArticulo.Text = id;
 
             }
             catch (Exception ex)

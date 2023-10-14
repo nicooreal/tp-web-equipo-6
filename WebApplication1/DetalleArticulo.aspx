@@ -3,19 +3,30 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-        <h2 style="padding: 15px">Detalles del articulo </h2>
+        <h2 class="my-4 p-3 text-center bg-primary text-light">DETALLE DEL ARTICULO</h2>
 
 
 
-    <asp:Label ID="LblArticulo" runat="server" Text=""></asp:Label>
 
-    <asp:GridView runat="server" ID="dgvDetalleArticulo">
+   
+
+    <asp:GridView runat="server" AutoGenerateColumns=false ID="dgvDetalleArticulo" CssClass="table-active table dark">
+    <Columns>   
+        <asp:BoundField  HeaderText = "NOMBRE" DataField ="Nombre"   />
+        <asp:BoundField  HeaderText = "DESCRIPCION" DataField ="Descripcion"   />
+         <asp:BoundField  HeaderText = "MARCA" DataField ="Marca"   />
+        <asp:BoundField  HeaderText = "CATEGORIA" DataField ="Categoria"   />
+    <asp:BoundField  HeaderText = "PRECIO" DataField ="Precio"   />
+    
+    </Columns>
+    
+    
     </asp:GridView>
 
     <asp:Repeater ID="repImagen" runat="server">
 
         <ItemTemplate>
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 60rem;">
                 <img src="<%#Eval("url")%>" class="card-img-top" alt="...">
                 <div class="card-body">
                     

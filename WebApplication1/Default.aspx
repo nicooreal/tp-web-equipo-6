@@ -14,9 +14,9 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <form class="form-inline">
  
-          <asp:TextBox ID="txtSearch" CssClass="form-control" runat="server" placeholder="Search" aria-label="Search"></asp:TextBox>
+          <asp:TextBox ID="txtSearch" CssClass="form-control" runat="server" placeholder="Search"   aria-label="Search"></asp:TextBox>
        
-   <asp:Button ID="btnBuscar" CssClass="btn btn-outline-success my-2 my-sm-0" runat="server" Text="Buscar prod" Onclick="btnBuscar_Click" />
+   <asp:Button ID="btnBuscar" CssClass="btn btn-outline-success my-2 my-sm-0" runat="server" Text="BUSCAR" Onclick="btnBuscar_Click" />
       
       </form>
     </div>
@@ -40,14 +40,15 @@
       <div class="card-body ">
       
           <h5 class="card-title"><%#Eval("Nombre")%></h5>
-          <p class="card-text"><%#Eval("Marca")%></p>
-          <p class ="card- text" > <%#Eval("Descripcion")%> </p>
-         <p class ="card- text" > <%#Eval("Categoria")%> </p>
+          <p class="card-text text-uppercase"><%#Eval("Marca")%></p>
+          <%--<p class ="card- text" > <%#Eval("Descripcion")%> </p>--%>
+         <%--<p class ="card- text" > <%#Eval("Categoria")%> </p>--%>
          <p class ="card- text" > $ <%#Eval("Precio")%> </p> 
           
 <div style="display:flex; float:right;padding-right:20px">
 <asp:Button style="" autoPOSTBACK="true" ID="btnAgregar" runat="server" Text="Agregar"  CssClass="btn btn-primary" CommandArgument='<%#Eval("Id") %>' CommandName="ArticuloId" OnClick="btnAgregar_Click"/>
 </div>
+<a href="DetalleArticulo.aspx?id=<%# Eval("Id") %>" class="btn btn-success">Ver detalle</a>
 
       </div>
     </div>
