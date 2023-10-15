@@ -51,12 +51,14 @@ namespace WebApplication1
 
         }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+           //messagebox.Show("Su Compra fue registrada")
 
 
 
 
-
-
-
+        }
     } 
 }

@@ -46,4 +46,7 @@
     </div>
 
 
+    <asp:Button ID="Button1" runat="server" CausesValidation="False" Height="32px" OnClick="Button1_Click" Text="COMPRAR" Width="141px" />
+
+
 </asp:Content>
