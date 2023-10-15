@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
- <asp:Repeater ID="RepCarrito" runat="server">
+ <asp:Repeater ID="RepCarrito" runat="server" OnItemCommand="RepCarrito_ItemCommand">
         <ItemTemplate>
           
 <div style="display: flex">
@@ -46,7 +46,6 @@
     </div>
 
 
-    <asp:Button ID="Button1" runat="server" CausesValidation="False" Height="32px" OnClick="Button1_Click" Text="COMPRAR" Width="141px" />
-
-
+   <asp:Button ID="btnMostrarMensaje" runat="server" cssclass="btn btn-outline-success " Text="COMPRAR" OnClick="btnMostrarMensaje_Click" />
+    <asp:Label ID="lblMensaje" runat="server" Text="" CssClass="badge bg-primary text-wrap fw-bold " style="width: 6rem;"></asp:Label>
 </asp:Content>

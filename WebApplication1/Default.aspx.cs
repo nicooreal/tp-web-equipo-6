@@ -26,8 +26,8 @@ namespace WebApplication1
         
 
                 
-            Session.Add("listaArticulooos", ListaArticulo);
-            ListaArticulo = (List<Articulo>)Session["listaArticulooos"];
+            Session.Add("listaArticulos", ListaArticulo);
+            ListaArticulo = (List<Articulo>)Session["listaArticulos"];
 
                 if (!IsPostBack)
                 {

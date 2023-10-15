@@ -54,7 +54,71 @@ namespace WebApplication1
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-           //messagebox.Show("Su Compra fue registrada")
+
+
+
+
+
+
+
+
+        }
+
+
+        protected void btnMostrarMensaje_Click(object sender, EventArgs e)
+        {
+
+            Sesion ses = new Sesion();
+            CarritoNegocio carneg = new CarritoNegocio();
+
+
+            if (ses.CantSession() > 0)
+            {
+
+                string mensaje = "COMPRA EXITOSA";
+                lblMensaje.Text = mensaje;
+
+                ses.ListadeCarrito().Clear();
+
+
+
+            }
+            else
+            {
+                string mensaje = "TU CARRITO ESTA VACIO, COMPRA RECHAZADA";
+                lblMensaje.Text = mensaje;
+
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        protected void RepCarrito_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+
+            Sesion sesion = new Sesion();
+            CarritoNegocio negocio = new CarritoNegocio();
+
+            string valor = ((Button)source).CommandArgument;
+            sesion.AgregarId(int.Parse(valor));
+            negocio.AgregarAlCarrito(int.Parse(valor));
+
+            sesion.ArticuloASession(int.Parse(valor));
 
 
 
