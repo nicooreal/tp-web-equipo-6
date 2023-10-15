@@ -79,7 +79,7 @@ namespace WebApplication1
                 lblMensaje.Text = mensaje;
 
                 ses.ListadeCarrito().Clear();
-
+                
 
 
             }
@@ -123,6 +123,13 @@ namespace WebApplication1
 
 
 
+        }
+
+        protected void btnMas_Click(object sender, EventArgs e)
+        {
+
+            lblMensaje.Text = "ERROR AL MODIFICAR CANTIDAD";
+            
         }
     } 
 }

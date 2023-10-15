@@ -14,15 +14,18 @@
                 
                 <div style="display:flex">
                     <div style="padding-left:20px;padding-right:10px; padding-bottom:5px">
-                        <asp:Button ID="btnMenos" runat="server" Text=" - "  CssClass="btn btn-primary" style="" />
+                        <asp:Button ID="btnMenos" runat="server" Text=" - "  CssClass="btn btn-primary" style="" OnClick="btnMas_Click" />
                     </div>
                     
                     <div  style="padding-right:5px;padding-left:10px">
                         <asp:Label ID="lblCantidad" ReadOnly="true" CommandName= tex Enabled="false" runat="server" style="width:35px;padding-top:5px;background-color:white">1</asp:Label>
                     </div>
                     <div style="padding-right:15px;padding-left:20px">
-                        <asp:Button ID="btnMas" runat="server" Text=" + "  CssClass="btn btn-primary"/>
-                    </div>
+                        <asp:Button ID="btnMas" runat="server" Text=" + "  CssClass="btn btn-primary" OnClick="btnMas_Click"/>
+                        </div>
+                    
+                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+
                     
                 </div>
                 
@@ -46,6 +49,9 @@
     </div>
 
 
+   <div class="d-grid gap-2 col-6 mx-auto">
    <asp:Button ID="btnMostrarMensaje" runat="server" cssclass="btn btn-outline-success " Text="COMPRAR" OnClick="btnMostrarMensaje_Click" />
     <asp:Label ID="lblMensaje" runat="server" Text="" CssClass="badge bg-primary text-wrap fw-bold " style="width: 6rem;"></asp:Label>
+
+</div>
 </asp:Content>
