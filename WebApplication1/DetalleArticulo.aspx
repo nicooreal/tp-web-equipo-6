@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+<body style="background-color: #ADD8E6;">
         <h2 class="my-4 p-3 text-center bg-primary text-light">DETALLE DEL ARTICULO</h2>
 
 
@@ -38,7 +38,7 @@
 
     </asp:Repeater>
 
-
+    </body>
 
 </asp:Content>
 

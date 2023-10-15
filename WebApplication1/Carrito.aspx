@@ -3,10 +3,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+
  <asp:Repeater ID="RepCarrito" runat="server" OnItemCommand="RepCarrito_ItemCommand">
         <ItemTemplate>
           
-<div style="display: flex">
+<div style=" display: flex">
                 <%--<p ><%#Eval("Id") %></p>--%>
                 <h2><%#Eval("nombre") %></h2>
                 <p style="padding:5px; font-size:20px"><%#Eval("marca") %></p>
@@ -24,7 +25,7 @@
                         <asp:Button ID="btnMas" runat="server" Text=" + "  CssClass="btn btn-primary" OnClick="btnMas_Click"/>
                         </div>
                     
-                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                    
 
                     
                 </div>
@@ -54,4 +55,5 @@
     <asp:Label ID="lblMensaje" runat="server" Text="" CssClass="badge bg-primary text-wrap fw-bold " style="width: 6rem;"></asp:Label>
 
 </div>
+     
 </asp:Content>
